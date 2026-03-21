@@ -1,0 +1,272 @@
+openapi: 3.1.0
+info:
+  title: Ticketmaster Discovery API
+  description: >-
+    The Ticketmaster Discovery API allows developers to search for events,
+    attractions, venues, and classifications across all Ticketmaster
+    supported sources, markets, and locales. The API provides access to
+    content from Ticketmaster, Universe, FrontGate Tickets, and
+    Ticketmaster Resale platforms.
+  version: '2.0'
+servers:
+  - url: https://app.ticketmaster.com/discovery/v2
+tags:
+  - name: Events
+    description: Search and retrieve event information.
+  - name: Attractions
+    description: Search and retrieve attraction information.
+  - name: Venues
+    description: Search and retrieve venue information.
+  - name: Classifications
+    description: Search and retrieve classification/genre information.
+paths:
+  /events.json:
+    get:
+      operationId: searchEvents
+      summary: Search events
+      description: >-
+        Find events and filter the search by location, date, availability,
+        and other criteria.
+      tags:
+        - Events
+      parameters:
+        - name: apikey
+          in: query
+          required: true
+          description: API key for authentication.
+          schema:
+            type: string
+        - name: keyword
+          in: query
+          description: Keyword to search on.
+          schema:
+            type: string
+        - name: city
+          in: query
+          description: Filter by city name.
+          schema:
+            type: string
+        - name: stateCode
+          in: query
+          description: Filter by state code.
+          schema:
+            type: string
+        - name: countryCode
+          in: query
+          description: Filter by country code.
+          schema:
+            type: string
+        - name: startDateTime
+          in: query
+          description: Filter events starting after this date/time.
+          schema:
+            type: string
+            format: date-time
+        - name: endDateTime
+          in: query
+          description: Filter events starting before this date/time.
+          schema:
+            type: string
+            format: date-time
+        - name: size
+          in: query
+          description: Page size of the response.
+          schema:
+            type: integer
+        - name: page
+          in: query
+          description: Page number.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+  /events/{id}.json:
+    get:
+      operationId: getEventDetails
+      summary: Get event details
+      description: >-
+        Get details for a specific event using the event identifier.
+      tags:
+        - Events
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Event identifier.
+          schema:
+            type: string
+        - name: apikey
+          in: query
+          required: true
+          description: API key for authentication.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+  /attractions.json:
+    get:
+      operationId: searchAttractions
+      summary: Search attractions
+      description: >-
+        Find attractions (artists, teams, etc.) and filter by keyword
+        and classification.
+      tags:
+        - Attractions
+      parameters:
+        - name: apikey
+          in: query
+          required: true
+          description: API key for authentication.
+          schema:
+            type: string
+        - name: keyword
+          in: query
+          description: Keyword to search on.
+          schema:
+            type: string
+        - name: size
+          in: query
+          description: Page size of the response.
+          schema:
+            type: integer
+        - name: page
+          in: query
+          description: Page number.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+  /attractions/{id}.json:
+    get:
+      operationId: getAttractionDetails
+      summary: Get attraction details
+      description: >-
+        Get details for a specific attraction using the attraction identifier.
+      tags:
+        - Attractions
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Attraction identifier.
+          schema:
+            type: string
+        - name: apikey
+          in: query
+          required: true
+          description: API key for authentication.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+  /venues.json:
+    get:
+      operationId: searchVenues
+      summary: Search venues
+      description: >-
+        Find venues and filter by keyword, city, state, and country.
+      tags:
+        - Venues
+      parameters:
+        - name: apikey
+          in: query
+          required: true
+          description: API key for authentication.
+          schema:
+            type: string
+        - name: keyword
+          in: query
+          description: Keyword to search on.
+          schema:
+            type: string
+        - name: city
+          in: query
+          description: Filter by city name.
+          schema:
+            type: string
+        - name: stateCode
+          in: query
+          description: Filter by state code.
+          schema:
+            type: string
+        - name: countryCode
+          in: query
+          description: Filter by country code.
+          schema:
+            type: string
+        - name: size
+          in: query
+          description: Page size of the response.
+          schema:
+            type: integer
+        - name: page
+          in: query
+          description: Page number.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+  /venues/{id}.json:
+    get:
+      operationId: getVenueDetails
+      summary: Get venue details
+      description: >-
+        Get details for a specific venue using the venue identifier.
+      tags:
+        - Venues
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Venue identifier.
+          schema:
+            type: string
+        - name: apikey
+          in: query
+          required: true
+          description: API key for authentication.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+  /classifications.json:
+    get:
+      operationId: searchClassifications
+      summary: Search classifications
+      description: >-
+        Find classifications (segments, genres, sub-genres) and filter
+        by keyword.
+      tags:
+        - Classifications
+      parameters:
+        - name: apikey
+          in: query
+          required: true
+          description: API key for authentication.
+          schema:
+            type: string
+        - name: keyword
+          in: query
+          description: Keyword to search on.
+          schema:
+            type: string
+        - name: size
+          in: query
+          description: Page size of the response.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: query
+      name: apikey
