@@ -1,24 +1,20 @@
 aid: live-nation-entertainment
-url: 
-  https://raw.githubusercontent.com/api-evangelist/live-nation-entertainment/refs/heads/main/apis.yml
+url: https://raw.githubusercontent.com/api-evangelist/live-nation-entertainment/refs/heads/main/apis.yml
 apis:
   - aid: live-nation-entertainment:ticketmaster-discovery-api
     name: Ticketmaster Discovery API
     tags:
+      - Attractions
       - Events
       - Ticketing
       - Venues
-      - Attractions
-    image: 
-      https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     baseURL: https://app.ticketmaster.com/discovery/v2
     humanURL: https://developer.ticketmaster.com/
     properties:
-      - url: 
-          https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/
+      - url: https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/
         type: Documentation
-      - url: 
-          openapi/live-nation-entertainment-ticketmaster-discovery-api-openapi.yml
+      - url: openapi/live-nation-entertainment-ticketmaster-discovery-api-openapi.yml
         type: OpenAPI
     description: >-
       The Ticketmaster Discovery API allows developers to search for events, attractions,

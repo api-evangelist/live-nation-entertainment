@@ -11,14 +11,14 @@ info:
 servers:
   - url: https://app.ticketmaster.com/discovery/v2
 tags:
-  - name: Events
-    description: Search and retrieve event information.
   - name: Attractions
     description: Search and retrieve attraction information.
-  - name: Venues
-    description: Search and retrieve venue information.
   - name: Classifications
     description: Search and retrieve classification/genre information.
+  - name: Events
+    description: Search and retrieve event information.
+  - name: Venues
+    description: Search and retrieve venue information.
 paths:
   /events.json:
     get:
