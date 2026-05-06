@@ -1,142 +1,98 @@
 specification: API Commons Plans
 specificationVersion: '0.1'
 schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
-provider: live-nation-entertainment
+provider: Live Nation Entertainment
 providerId: live-nation-entertainment
 created: '2026-05-04'
-modified: '2026-05-04'
-tags: []
-description: Machine-readable plans and pricing scaffold for this API provider. Conforms to the API Commons
-  Plans schema. Tier limits and prices are scaffold defaults; replace with provider-published values.
+modified: '2026-05-05'
+reconciled: true
+tags:
+  - Attractions
+  - Events
+  - Ticketing
+  - Venues
+description: Live Nation / Ticketmaster operates an open developer network at developer.ticketmaster.com.
+  The Ticketmaster Discovery API is classified as an "Open API" — all authenticated developers receive
+  the same default quotas (5,000 calls/day, 5 req/sec) at no charge. Higher quotas and partner / affiliate
+  / Partner API access are evaluated case-by-case after compliance and branding review; commercial revenue
+  flows through ticket sales and affiliate programs, not API metering.
+sources:
+  - https://developer.ticketmaster.com/products-and-docs/apis/getting-started/
+  - https://developer.ticketmaster.com/
 plans:
-  - id: live-nation-entertainment-free
-    name: Free
+  - id: live-nation-entertainment-discovery-default
+    name: Discovery API — Default (Open)
     type: freemium
-    description: Free entry tier for the live-nation-entertainment API surface. Intended for evaluation,
-      prototyping, and low-volume integrations. Real limits and pricing must be reconciled with the provider's
-      published plan documentation.
+    description: Free, self-serve access to the Ticketmaster Discovery API for any registered developer.
+      Default quota of 5,000 calls/day at 5 requests/second across Ticketmaster, Universe, FrontGate
+      Tickets, and Ticketmaster Resale content.
     entries:
-      - label: API Requests
-        description: Monthly API request quota across all included endpoints
-        name: api_requests
+      - label: Daily quota
+        name: daily_quota
         type: quota
-        metric: requests
-        limit: 1000
-        timeFrame: month
+        metric: request
+        limit: 5000
+        timeFrame: day
         geo: global
-        domains:
-          - https://app.ticketmaster.com/discovery/v2
         unit: 1
         price: '0.00'
         userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the free tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 10
-        timeFrame: minute
-        geo: global
-        domains:
-          - https://app.ticketmaster.com/discovery/v2
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-    elements:
-      - name: Public Documentation
-      - name: Community Support
-      - name: Sandbox Access
-      - name: Ticketmaster Discovery API
-  - id: live-nation-entertainment-pro
-    name: Professional
-    type: paid
-    description: Production tier for live-nation-entertainment. Provides higher quotas, priority support,
-      and access to the broader API portfolio. Pricing placeholder; align with the provider's pricing
-      page.
-    entries:
-      - label: API Requests
-        description: Monthly API request quota
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 100000
-        timeFrame: month
-        geo: global
-        domains:
-          - https://app.ticketmaster.com/discovery/v2
-        unit: 1
-        price: TBD
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the professional tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 100
-        timeFrame: minute
-        geo: global
-        domains:
-          - https://app.ticketmaster.com/discovery/v2
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Overage
-        description: Per-request price after monthly quota is exceeded
-        name: overage
+      - label: Throughput
+        name: throughput
         type: metered
-        metric: requests
+        metric: requests_per_second
+        limit: 5
+        timeFrame: second
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+    elements:
+      - name: Discovery API access
+      - name: Events / attractions / venues / classifications search
+      - name: Ticketmaster, Universe, FrontGate, Resale content
+      - name: Self-serve API key
+  - id: live-nation-entertainment-discovery-extended
+    name: Discovery API — Extended Quota
+    type: enterprise
+    description: Quota increases on the Discovery API are granted case-by-case after Ticketmaster verifies
+      compliance with Terms of Service, branding guidelines, and proper representation of Ticketmaster
+      data. No published per-call pricing; access remains free of charge.
+    entries:
+      - label: Daily quota (negotiated)
+        name: daily_quota
+        type: quota
+        metric: request
+        limit: -1
+        timeFrame: day
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+    elements:
+      - name: Higher daily quota
+      - name: Compliance review required
+      - name: Branding guideline adherence
+  - id: live-nation-entertainment-affiliate
+    name: Affiliate / Partner Program
+    type: enterprise
+    description: Commercial relationship for ticket-driving partners (publishers, fan sites, integrators).
+      Revenue is share of ticket sales referred via the Discovery + Commerce APIs, not API call fees.
+    entries:
+      - label: Affiliate revenue share
+        name: affiliate_share
+        type: subscription
+        metric: contract
         limit: -1
         timeFrame: month
         geo: global
-        domains:
-          - https://app.ticketmaster.com/discovery/v2
-        unit: 1000
-        price: TBD
+        unit: 1
+        price: contact provider
         userMultiplied: false
     elements:
-      - name: All Production Endpoints
-      - name: Email Support
-      - name: SLA Targets
-      - name: Webhook Subscriptions
-      - name: Ticketmaster Discovery API
-  - id: live-nation-entertainment-enterprise
-    name: Enterprise
-    type: enterprise
-    description: Custom-negotiated tier for live-nation-entertainment. Includes dedicated capacity, contractual
-      SLAs, security review, data residency options, and named technical account management.
-    entries:
-      - label: API Requests
-        description: Negotiated request volume; -1 indicates uncapped subject to fair use
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: -1
-        timeFrame: month
-        geo: configurable
-        domains:
-          - https://app.ticketmaster.com/discovery/v2
-        unit: 1
-        price: custom
-        userMultiplied: false
-      - label: Rate Limit
-        description: Negotiated burst and steady-state rate
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 1000
-        timeFrame: minute
-        geo: configurable
-        domains:
-          - https://app.ticketmaster.com/discovery/v2
-        unit: 1
-        price: custom
-        userMultiplied: false
-    elements:
-      - name: Unlimited / Negotiated Volume
-      - name: 24/7 Dedicated Support
-      - name: Contractual SLA
-      - name: Security & Compliance Review
-      - name: Dedicated Account Manager
-      - name: Custom Data Residency
-      - name: Ticketmaster Discovery API
-maintainers: []
+      - name: Affiliate / partner program access
+      - name: Commerce flows (where granted)
+      - name: Revenue share on referred ticket sales
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

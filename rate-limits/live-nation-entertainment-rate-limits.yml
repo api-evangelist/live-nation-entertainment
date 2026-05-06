@@ -1,82 +1,59 @@
 specification: API Commons Rate Limits
 specificationVersion: '0.1'
 schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
-provider: live-nation-entertainment
+provider: Live Nation Entertainment
 providerId: live-nation-entertainment
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: true
 tags:
   - Rate Limiting
-  - Quotas
-  - Throttling
-description: Machine-readable rate limit definitions for the live-nation-entertainment API surface. Captures
-  per-tier quotas, burst behavior, response signaling, and recovery semantics. Defaults are scaffold values
-  to be replaced with published provider limits.
+  - Ticketing
+  - Events
+  - Venues
+description: The Ticketmaster Discovery API enforces a default per-API-key quota of 5,000 calls per day
+  and a throughput cap of 5 requests per second. Quota usage is surfaced via custom Rate-Limit-* response
+  headers. Quota violations return HTTP 429 with the message "Rate limit quota violation. Quota limit
+  exceeded." Higher quotas are granted case-by-case after Ticketmaster verifies ToS compliance, branding,
+  and proper representation of Ticketmaster data.
+sources:
+  - https://developer.ticketmaster.com/products-and-docs/apis/getting-started/
+  - https://developer.ticketmaster.com/support/faq/
 headers:
-  limit: X-RateLimit-Limit
-  remaining: X-RateLimit-Remaining
-  reset: X-RateLimit-Reset
-  retryAfter: Retry-After
-  policy: RateLimit-Policy
+  limit: Rate-Limit
+  remaining: Rate-Limit-Available
+  over: Rate-Limit-Over
+  reset: Rate-Limit-Reset
 responseCodes:
   throttled: 429
   quotaExceeded: 429
-  serviceUnavailable: 503
 limits:
-  - tier: free
-    name: Free Tier Default
+  - name: Discovery API daily quota
     scope: api-key
-    metric: requests_per_minute
-    limit: 10
-    burst: 20
-    timeFrame: minute
-    applies:
-      - Ticketmaster Discovery API
-  - tier: free
-    name: Free Tier Monthly Quota
+    metric: requests_per_day
+    limit: 5000
+    timeFrame: day
+    notes: Default quota for new API keys. Reset time surfaced via Rate-Limit-Reset (UTC).
+  - name: Discovery API throughput
     scope: api-key
-    metric: requests_per_month
-    limit: 1000
-    timeFrame: month
-    applies:
-      - Ticketmaster Discovery API
-  - tier: professional
-    name: Professional Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 100
-    burst: 200
-    timeFrame: minute
-    applies:
-      - Ticketmaster Discovery API
-  - tier: professional
-    name: Professional Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 100000
-    timeFrame: month
-    applies:
-      - Ticketmaster Discovery API
-  - tier: enterprise
-    name: Enterprise Negotiated Limit
-    scope: contract
-    metric: requests_per_minute
-    limit: 1000
-    burst: 5000
-    timeFrame: minute
-    applies:
-      - Ticketmaster Discovery API
+    metric: requests_per_second
+    limit: 5
+    timeFrame: second
+    notes: Steady-state throughput cap on the Discovery API.
 policies:
+  - name: Quota increases via partner review
+    description: Higher daily quotas are granted case-by-case after Ticketmaster verifies (1) Terms of
+      Service compliance, (2) branding-guideline adherence, and (3) proper representation of Ticketmaster
+      data.
+  - name: Rate-Limit headers
+    description: Every response includes Rate-Limit (total quota), Rate-Limit-Available (remaining),
+      Rate-Limit-Over (over-quota count), and Rate-Limit-Reset (UTC reset timestamp).
+  - name: 429 handling
+    description: When quota is exceeded, the API returns HTTP 429 with body "Rate limit quota violation.
+      Quota limit exceeded." Backoff until the Rate-Limit-Reset timestamp.
   - name: Backoff Strategy
-    description: Clients should implement exponential backoff with jitter, honoring the Retry-After header
-      when present.
-  - name: Burst Handling
-    description: Short bursts above the steady-state limit are tolerated up to the documented burst ceiling
-      before throttling engages.
-  - name: Quota Reset
-    description: Monthly quotas reset at the start of each calendar month in UTC. Per-minute and per-second
-      windows reset on a sliding-window basis.
-  - name: Fair Use
-    description: Even on uncapped enterprise tiers, sustained usage that materially impacts shared infrastructure
-      may be subject to fair-use throttling.
-maintainers: []
+    description: Use exponential backoff with jitter for 5xx and unexpected 429s; for explicit quota
+      exceedance, wait for the Rate-Limit-Reset timestamp.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
