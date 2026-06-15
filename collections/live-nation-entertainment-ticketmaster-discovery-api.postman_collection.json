@@ -1,0 +1,761 @@
+{
+  "item": [
+    {
+      "id": "5d6ddc99-d989-4a78-8968-e6e05eec2722",
+      "name": "Attractions",
+      "description": {
+        "content": "Search and retrieve attraction information.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e91127b1-5ec1-4548-ac88-fa1bc086a6f7",
+          "name": "Search attractions",
+          "request": {
+            "name": "Search attractions",
+            "description": {
+              "content": "Find attractions (artists, teams, etc.) and filter by keyword and classification.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "attractions.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "apikey",
+                  "value": "<string>",
+                  "description": "(Required) API key for authentication."
+                },
+                {
+                  "disabled": false,
+                  "key": "keyword",
+                  "value": "<string>",
+                  "description": "Keyword to search on."
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "<integer>",
+                  "description": "Page size of the response."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Page number."
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e6de560c-059b-4a6d-8764-e943723d7ac4",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "attractions.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "keyword",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "606a8a19-f593-49e6-8c34-1059eb3769f4",
+          "name": "Get attraction details",
+          "request": {
+            "name": "Get attraction details",
+            "description": {
+              "content": "Get details for a specific attraction using the attraction identifier.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "attractions",
+                "{{id}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "apikey",
+                  "value": "<string>",
+                  "description": "(Required) API key for authentication."
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1b2ac0de-71e9-48c0-9648-aef0005c31cd",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "attractions",
+                    "{{id}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apikey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "aba0edc7-0644-4d1d-9777-b3b5341e49bc",
+      "name": "Classifications",
+      "description": {
+        "content": "Search and retrieve classification/genre information.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fec7a847-b1f4-40cf-90ad-5ce2394c5851",
+          "name": "Search classifications",
+          "request": {
+            "name": "Search classifications",
+            "description": {
+              "content": "Find classifications (segments, genres, sub-genres) and filter by keyword.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "classifications.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "apikey",
+                  "value": "<string>",
+                  "description": "(Required) API key for authentication."
+                },
+                {
+                  "disabled": false,
+                  "key": "keyword",
+                  "value": "<string>",
+                  "description": "Keyword to search on."
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "<integer>",
+                  "description": "Page size of the response."
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1d58896c-ae7f-4014-a600-145cdb148ceb",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "classifications.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "keyword",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "size",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "a29aba37-6ac7-476a-a7a8-33ac63764890",
+      "name": "Events",
+      "description": {
+        "content": "Search and retrieve event information.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8b68ee33-2c77-4cc3-9aa4-f82a56d18e06",
+          "name": "Search events",
+          "request": {
+            "name": "Search events",
+            "description": {
+              "content": "Find events and filter the search by location, date, availability, and other criteria.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "events.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "apikey",
+                  "value": "<string>",
+                  "description": "(Required) API key for authentication."
+                },
+                {
+                  "disabled": false,
+                  "key": "keyword",
+                  "value": "<string>",
+                  "description": "Keyword to search on."
+                },
+                {
+                  "disabled": false,
+                  "key": "city",
+                  "value": "<string>",
+                  "description": "Filter by city name."
+                },
+                {
+                  "disabled": false,
+                  "key": "stateCode",
+                  "value": "<string>",
+                  "description": "Filter by state code."
+                },
+                {
+                  "disabled": false,
+                  "key": "countryCode",
+                  "value": "<string>",
+                  "description": "Filter by country code."
+                },
+                {
+                  "disabled": false,
+                  "key": "startDateTime",
+                  "value": "<dateTime>",
+                  "description": "Filter events starting after this date/time."
+                },
+                {
+                  "disabled": false,
+                  "key": "endDateTime",
+                  "value": "<dateTime>",
+                  "description": "Filter events starting before this date/time."
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "<integer>",
+                  "description": "Page size of the response."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Page number."
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3b08d78b-57c8-44e3-94e4-2f1a12f5f5a8",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "events.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "keyword",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "city",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "stateCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "countryCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "startDateTime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "endDateTime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c1e0aab9-18c2-4494-98fa-1734e445f484",
+          "name": "Get event details",
+          "request": {
+            "name": "Get event details",
+            "description": {
+              "content": "Get details for a specific event using the event identifier.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "events",
+                "{{id}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "apikey",
+                  "value": "<string>",
+                  "description": "(Required) API key for authentication."
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "45a2be20-9457-4438-bdf5-1b734f32a49e",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "events",
+                    "{{id}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apikey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "b3827243-8b61-45c4-b35d-d3c874d39ec7",
+      "name": "Venues",
+      "description": {
+        "content": "Search and retrieve venue information.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "89ece9b4-9869-4098-aa77-8ddf91a6b9a4",
+          "name": "Search venues",
+          "request": {
+            "name": "Search venues",
+            "description": {
+              "content": "Find venues and filter by keyword, city, state, and country.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "venues.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "apikey",
+                  "value": "<string>",
+                  "description": "(Required) API key for authentication."
+                },
+                {
+                  "disabled": false,
+                  "key": "keyword",
+                  "value": "<string>",
+                  "description": "Keyword to search on."
+                },
+                {
+                  "disabled": false,
+                  "key": "city",
+                  "value": "<string>",
+                  "description": "Filter by city name."
+                },
+                {
+                  "disabled": false,
+                  "key": "stateCode",
+                  "value": "<string>",
+                  "description": "Filter by state code."
+                },
+                {
+                  "disabled": false,
+                  "key": "countryCode",
+                  "value": "<string>",
+                  "description": "Filter by country code."
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "<integer>",
+                  "description": "Page size of the response."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Page number."
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0bc928f3-42be-4115-b39d-36c6e9e7b283",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "venues.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "keyword",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "city",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "stateCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "countryCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "680a223e-ffd2-4bf4-a784-f1b95eb343a1",
+          "name": "Get venue details",
+          "request": {
+            "name": "Get venue details",
+            "description": {
+              "content": "Get details for a specific venue using the venue identifier.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "venues",
+                "{{id}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "apikey",
+                  "value": "<string>",
+                  "description": "(Required) API key for authentication."
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "67a37208-79b7-4737-bdbc-0df9e4bf9f2c",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "venues",
+                    "{{id}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apikey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.ticketmaster.com/discovery/v2",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) Venue identifier.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "id"
+    }
+  ],
+  "info": {
+    "_postman_id": "98a802eb-8fd5-434a-b4bd-1112061a2d2e",
+    "name": "Ticketmaster Discovery API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Ticketmaster Discovery API allows developers to search for events, attractions, venues, and classifications across all Ticketmaster supported sources, markets, and locales. The API provides access to content from Ticketmaster, Universe, FrontGate Tickets, and Ticketmaster Resale platforms.",
+      "type": "text/plain"
+    }
+  }
+}
