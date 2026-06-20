@@ -15,7 +15,7 @@ apis:
       - Events
       - Ticketing
       - Venues
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: https://app.ticketmaster.com/discovery/v2
     humanURL: https://developer.ticketmaster.com/
     properties:
