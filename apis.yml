@@ -3,10 +3,16 @@ tags:
   - Fortune 500
 url: https://raw.githubusercontent.com/api-evangelist/live-nation-entertainment/refs/heads/main/apis.yml
 common:
+  - type: DomainSecurity
+    url: security/live-nation-entertainment-domain-security.yml
+  - type: Authentication
+    url: authentication/live-nation-entertainment-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/ticketmaster
   - type: LinkedIn
     url: https://www.linkedin.com/company/live-nation
+  - url: https://newsroom.livenation.com/feed
+    type: Blog
 apis:
   - aid: live-nation-entertainment:ticketmaster-discovery-api
     name: Ticketmaster Discovery API
