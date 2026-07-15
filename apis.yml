@@ -3,6 +3,8 @@ tags:
   - Fortune 500
 url: https://raw.githubusercontent.com/api-evangelist/live-nation-entertainment/refs/heads/main/apis.yml
 common:
+  - type: AgenticAccess
+    url: agentic-access/live-nation-entertainment-agentic-access.yml
   - type: DomainSecurity
     url: security/live-nation-entertainment-domain-security.yml
   - type: Authentication
