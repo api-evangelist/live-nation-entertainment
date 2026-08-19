@@ -1,0 +1,110 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ticketmaster Discovery Attractions Events API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Events",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.ticketmaster.com/discovery/v2/events.json",
+            "params": [
+              {
+                "name": "apikey",
+                "value": "",
+                "type": "query",
+                "description": "API key for authentication."
+              },
+              {
+                "name": "keyword",
+                "value": "",
+                "type": "query",
+                "description": "Keyword to search on."
+              },
+              {
+                "name": "city",
+                "value": "",
+                "type": "query",
+                "description": "Filter by city name."
+              },
+              {
+                "name": "stateCode",
+                "value": "",
+                "type": "query",
+                "description": "Filter by state code."
+              },
+              {
+                "name": "countryCode",
+                "value": "",
+                "type": "query",
+                "description": "Filter by country code."
+              },
+              {
+                "name": "startDateTime",
+                "value": "",
+                "type": "query",
+                "description": "Filter events starting after this date/time."
+              },
+              {
+                "name": "endDateTime",
+                "value": "",
+                "type": "query",
+                "description": "Filter events starting before this date/time."
+              },
+              {
+                "name": "size",
+                "value": "",
+                "type": "query",
+                "description": "Page size of the response."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number."
+              }
+            ]
+          },
+          "docs": "Find events and filter the search by location, date, availability, and other criteria."
+        },
+        {
+          "info": {
+            "name": "Get event details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.ticketmaster.com/discovery/v2/events/:id.json",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Event identifier."
+              },
+              {
+                "name": "apikey",
+                "value": "",
+                "type": "query",
+                "description": "API key for authentication."
+              }
+            ]
+          },
+          "docs": "Get details for a specific event using the event identifier."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,122 @@
+{
+  "item": [
+    {
+      "id": "a428e66f-aa9a-47e0-a7fd-8f2cb13944a4",
+      "name": "Classifications",
+      "description": {
+        "content": "Search and retrieve classification/genre information.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "12b20d2a-f685-445e-8a34-db6ed21735fc",
+          "name": "Search classifications",
+          "request": {
+            "name": "Search classifications",
+            "description": {
+              "content": "Find classifications (segments, genres, sub-genres) and filter by keyword.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "classifications.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "apikey",
+                  "value": "<string>",
+                  "description": "(Required) API key for authentication."
+                },
+                {
+                  "disabled": false,
+                  "key": "keyword",
+                  "value": "<string>",
+                  "description": "Keyword to search on."
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "<integer>",
+                  "description": "Page size of the response."
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e4c00175-10ce-46f9-924d-856e6f24c1ba",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "classifications.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "keyword",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "size",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.ticketmaster.com/discovery/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "1bc69beb-2eae-4436-8e99-7721089c3ab5",
+    "name": "Ticketmaster Discovery Attractions Classifications API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Ticketmaster Discovery API allows developers to search for events, attractions, venues, and classifications across all Ticketmaster supported sources, markets, and locales. The API provides access to content from Ticketmaster, Universe, FrontGate Tickets, and Ticketmaster Resale platforms.",
+      "type": "text/plain"
+    }
+  }
+}

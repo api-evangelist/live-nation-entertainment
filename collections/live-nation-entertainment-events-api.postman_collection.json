@@ -1,0 +1,264 @@
+{
+  "item": [
+    {
+      "id": "2735157e-2cfd-4379-bf32-25d3c646b6e6",
+      "name": "Events",
+      "description": {
+        "content": "Search and retrieve event information.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "47ec3c67-1ea3-4de6-9b99-86660c692327",
+          "name": "Search events",
+          "request": {
+            "name": "Search events",
+            "description": {
+              "content": "Find events and filter the search by location, date, availability, and other criteria.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "events.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "apikey",
+                  "value": "<string>",
+                  "description": "(Required) API key for authentication."
+                },
+                {
+                  "disabled": false,
+                  "key": "keyword",
+                  "value": "<string>",
+                  "description": "Keyword to search on."
+                },
+                {
+                  "disabled": false,
+                  "key": "city",
+                  "value": "<string>",
+                  "description": "Filter by city name."
+                },
+                {
+                  "disabled": false,
+                  "key": "stateCode",
+                  "value": "<string>",
+                  "description": "Filter by state code."
+                },
+                {
+                  "disabled": false,
+                  "key": "countryCode",
+                  "value": "<string>",
+                  "description": "Filter by country code."
+                },
+                {
+                  "disabled": false,
+                  "key": "startDateTime",
+                  "value": "<dateTime>",
+                  "description": "Filter events starting after this date/time."
+                },
+                {
+                  "disabled": false,
+                  "key": "endDateTime",
+                  "value": "<dateTime>",
+                  "description": "Filter events starting before this date/time."
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "<integer>",
+                  "description": "Page size of the response."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Page number."
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "24c444f4-ef16-4d7d-b392-a7b30f31cca8",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "events.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "keyword",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "city",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "stateCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "countryCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "startDateTime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "endDateTime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "18ecc418-00cc-4d21-8a9b-0b4fbcd75565",
+          "name": "Get event details",
+          "request": {
+            "name": "Get event details",
+            "description": {
+              "content": "Get details for a specific event using the event identifier.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "events",
+                "{{id}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "apikey",
+                  "value": "<string>",
+                  "description": "(Required) API key for authentication."
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f8e37d30-1219-4261-ab93-8b33daf80d23",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "events",
+                    "{{id}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apikey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.ticketmaster.com/discovery/v2",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) Event identifier.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "id"
+    }
+  ],
+  "info": {
+    "_postman_id": "95f38f3d-7742-4d91-a885-6f16b2761011",
+    "name": "Ticketmaster Discovery Attractions Events API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Ticketmaster Discovery API allows developers to search for events, attractions, venues, and classifications across all Ticketmaster supported sources, markets, and locales. The API provides access to content from Ticketmaster, Universe, FrontGate Tickets, and Ticketmaster Resale platforms.",
+      "type": "text/plain"
+    }
+  }
+}

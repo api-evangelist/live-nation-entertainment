@@ -1,0 +1,244 @@
+{
+  "item": [
+    {
+      "id": "023e8d4e-67a5-4341-99f9-bbfeee78b710",
+      "name": "Venues",
+      "description": {
+        "content": "Search and retrieve venue information.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "76a425e3-c3c8-413d-ae90-333f3dcd89ba",
+          "name": "Search venues",
+          "request": {
+            "name": "Search venues",
+            "description": {
+              "content": "Find venues and filter by keyword, city, state, and country.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "venues.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "apikey",
+                  "value": "<string>",
+                  "description": "(Required) API key for authentication."
+                },
+                {
+                  "disabled": false,
+                  "key": "keyword",
+                  "value": "<string>",
+                  "description": "Keyword to search on."
+                },
+                {
+                  "disabled": false,
+                  "key": "city",
+                  "value": "<string>",
+                  "description": "Filter by city name."
+                },
+                {
+                  "disabled": false,
+                  "key": "stateCode",
+                  "value": "<string>",
+                  "description": "Filter by state code."
+                },
+                {
+                  "disabled": false,
+                  "key": "countryCode",
+                  "value": "<string>",
+                  "description": "Filter by country code."
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "<integer>",
+                  "description": "Page size of the response."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Page number."
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d1d47a21-e3ea-4c37-9b02-75528ef79baa",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "venues.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "keyword",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "city",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "stateCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "countryCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "88f6722d-3c6f-4d1a-b3cf-365fea77299e",
+          "name": "Get venue details",
+          "request": {
+            "name": "Get venue details",
+            "description": {
+              "content": "Get details for a specific venue using the venue identifier.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "venues",
+                "{{id}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "apikey",
+                  "value": "<string>",
+                  "description": "(Required) API key for authentication."
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "809fe9ef-03c9-4343-919c-16e935e7cf01",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "venues",
+                    "{{id}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apikey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.ticketmaster.com/discovery/v2",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) Venue identifier.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "id"
+    }
+  ],
+  "info": {
+    "_postman_id": "80605c52-faf8-4e44-b593-1cff86676cfa",
+    "name": "Ticketmaster Discovery Attractions Venues API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Ticketmaster Discovery API allows developers to search for events, attractions, venues, and classifications across all Ticketmaster supported sources, markets, and locales. The API provides access to content from Ticketmaster, Universe, FrontGate Tickets, and Ticketmaster Resale platforms.",
+      "type": "text/plain"
+    }
+  }
+}

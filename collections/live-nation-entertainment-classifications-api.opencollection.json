@@ -1,0 +1,49 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ticketmaster Discovery Attractions Classifications API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Classifications",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search classifications",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.ticketmaster.com/discovery/v2/classifications.json",
+            "params": [
+              {
+                "name": "apikey",
+                "value": "",
+                "type": "query",
+                "description": "API key for authentication."
+              },
+              {
+                "name": "keyword",
+                "value": "",
+                "type": "query",
+                "description": "Keyword to search on."
+              },
+              {
+                "name": "size",
+                "value": "",
+                "type": "query",
+                "description": "Page size of the response."
+              }
+            ]
+          },
+          "docs": "Find classifications (segments, genres, sub-genres) and filter by keyword."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,80 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ticketmaster Discovery Attractions API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Attractions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search attractions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.ticketmaster.com/discovery/v2/attractions.json",
+            "params": [
+              {
+                "name": "apikey",
+                "value": "",
+                "type": "query",
+                "description": "API key for authentication."
+              },
+              {
+                "name": "keyword",
+                "value": "",
+                "type": "query",
+                "description": "Keyword to search on."
+              },
+              {
+                "name": "size",
+                "value": "",
+                "type": "query",
+                "description": "Page size of the response."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number."
+              }
+            ]
+          },
+          "docs": "Find attractions (artists, teams, etc.) and filter by keyword and classification."
+        },
+        {
+          "info": {
+            "name": "Get attraction details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.ticketmaster.com/discovery/v2/attractions/:id.json",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Attraction identifier."
+              },
+              {
+                "name": "apikey",
+                "value": "",
+                "type": "query",
+                "description": "API key for authentication."
+              }
+            ]
+          },
+          "docs": "Get details for a specific attraction using the attraction identifier."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
