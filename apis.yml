@@ -61,6 +61,8 @@ apis:
   humanURL: https://developer.ticketmaster.com/
   baseURL: https://app.ticketmaster.com/discovery/v2
   tags:
+  - Event
+  tags_raw:
   - Events
   properties:
   - type: OpenAPI
