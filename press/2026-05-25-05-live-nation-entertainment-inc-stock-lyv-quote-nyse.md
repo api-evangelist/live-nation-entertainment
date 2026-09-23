@@ -1,7 +1,9 @@
 ---
 title: Live Nation Entertainment, Inc. Stock (LYV) - Quote Nyse
 url: https://www.marketscreener.com/quote/stock/LIVE-NATION-ENTERTAINMENT-13449/
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Live Nation Entertainment" press release artificial intelligence'
 position: 5
 source: serpapi-google

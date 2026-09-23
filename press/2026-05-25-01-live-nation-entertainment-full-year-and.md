@@ -1,7 +1,9 @@
 ---
 title: LIVE NATION ENTERTAINMENT FULL YEAR AND ...
 url: https://www.prnewswire.com/news-releases/live-nation-entertainment-full-year-and-fourth-quarter-2025-results-302693023.html
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Live Nation Entertainment" press release artificial intelligence'
 position: 1
 source: serpapi-google

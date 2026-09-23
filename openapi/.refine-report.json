@@ -1,10 +1,7 @@
 {
   "provider": "live-nation-entertainment",
   "sources": [
-    "live-nation-entertainment-attractions-api-openapi.yml",
-    "live-nation-entertainment-classifications-api-openapi.yml",
-    "live-nation-entertainment-events-api-openapi.yml",
-    "live-nation-entertainment-venues-api-openapi.yml"
+    "_original/live-nation-entertainment-ticketmaster-discovery-api-openapi.yml"
   ],
   "outputs": [
     "live-nation-entertainment-attractions-api-openapi.yml",
@@ -15,6 +12,15 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "live-nation-entertainment-ticketmaster-discovery-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "live-nation-entertainment-attractions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "live-nation-entertainment-classifications-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "live-nation-entertainment-events-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "live-nation-entertainment-venues-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

@@ -1,7 +1,9 @@
 ---
 title: Live Nation Entertainment Full Year And Fourth Quarter ...
 url: https://newsroom.livenation.com/news/live-nation-entertainment-full-year-and-fourth-quarter-2025-results/
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Live Nation Entertainment" press release artificial intelligence'
 position: 2
 source: serpapi-google
