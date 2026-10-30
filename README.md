@@ -1,4 +1,4 @@
-# live-nation-entertainment (live-nation-entertainment)
+# Live Nation Entertainment
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,36 +66,85 @@
 
 Tap into the Ticketmaster open developer network which gives you the flexibility and scale to bring unforgettable live events to fans. It’s our technology – ...
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/live-nation-entertainment/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/live-nation-entertainment/refs/heads/main/apis.yml)
+**Areas:** Fortune 500
 
-## Timestamps
+## Live Nation Entertainment on APIs.io
 
-- **Modified:** 2026-05-19
+Everything profiled for Live Nation Entertainment is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/live-nation-entertainment/](https://apis.io/providers/live-nation-entertainment/)** — or go straight to one of the APIs or properties below.
 
-## APIs
+### APIs (4)
 
-### Ticketmaster Discovery API
+- [live-nation-entertainment Attractions API](https://apis.io/apis/live-nation-entertainment/live-nation-entertainment-attractions-api/) — Search and retrieve attraction information.
+- [live-nation-entertainment Classifications API](https://apis.io/apis/live-nation-entertainment/live-nation-entertainment-classifications-api/) — Search and retrieve classification/genre information.
+- [live-nation-entertainment Events API](https://apis.io/apis/live-nation-entertainment/live-nation-entertainment-events-api/) — Search and retrieve event information.
+- [live-nation-entertainment Venues API](https://apis.io/apis/live-nation-entertainment/live-nation-entertainment-venues-api/) — Search and retrieve venue information.
 
-The Ticketmaster Discovery API allows developers to search for events, attractions, venues, and classifications across all Ticketmaster supported sources, markets, and locales. The API provides access to content from Ticketmaster, Universe, FrontGate Tickets, and Ticketmaster Resale platforms with a default quota of 5000 API calls per day and rate limitation of 5 requests per second.
+### Published properties
 
-- **Human URL:** [https://developer.ticketmaster.com/](https://developer.ticketmaster.com/)
-- **Base URL:** `https://app.ticketmaster.com/discovery/v2`
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-#### Tags
+#### Agentic access (1)
 
-- Attractions
-- Events
-- Ticketing
-- Venues
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Properties
+- [Live Nation Entertainment Agentic Access](https://apis.io/agentic-access/live-nation-entertainment/live-nation-entertainment-agentic-access/)
 
-- [Documentation](https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/)
-- [OpenAPI](openapi/live-nation-entertainment-ticketmaster-discovery-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/live-nation-entertainment-ticketmaster-discovery-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/live-nation-entertainment-ticketmaster-discovery-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Collections (5)
 
-## Common Properties
+Postman and Open Collection request collections.
 
-- [GitHub Organization](https://github.com/ticketmaster)
-- [LinkedIn](https://www.linkedin.com/company/live-nation)
+- [Ticketmaster Discovery Attractions API](https://apis.io/collections/live-nation-entertainment/open-live-nation-entertainment-attractions-api/)
+- [Ticketmaster Discovery Attractions Classifications API](https://apis.io/collections/live-nation-entertainment/open-live-nation-entertainment-classifications-api/)
+- [Ticketmaster Discovery Attractions Events API](https://apis.io/collections/live-nation-entertainment/open-live-nation-entertainment-events-api/)
+- [Ticketmaster Discovery API](https://apis.io/collections/live-nation-entertainment/open-live-nation-entertainment-ticketmaster-discovery-api/)
+- [Ticketmaster Discovery Attractions Venues API](https://apis.io/collections/live-nation-entertainment/open-live-nation-entertainment-venues-api/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Live Nation Entertainment Authentication](https://apis.io/security/live-nation-entertainment/live-nation-entertainment-authentication/)
+- [Live Nation Entertainment Domain Security](https://apis.io/security/live-nation-entertainment/live-nation-entertainment-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Live Nation Entertainment Plans Pricing](https://apis.io/plans/live-nation-entertainment/live-nation-entertainment-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Live Nation Entertainment Rate Limits](https://apis.io/rate-limits/live-nation-entertainment/live-nation-entertainment-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Live Nation Entertainment Finops](https://apis.io/finops/live-nation-entertainment/live-nation-entertainment-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Blog](https://newsroom.livenation.com/feed)
+- [GitHub](https://github.com/ticketmaster)
+
+## API Evangelist rating
+
+**Unrated** — no public website could be reached for this company, so there was almost nothing to measure and nothing a reader could check.
+
+This is not a score of zero. No rating is published for this company. If that is wrong because something public exists that we missed, say so on this repository or email [info@apievangelist.com](mailto:info@apievangelist.com) and it will be re-run — free, and no justification needed.
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Live Nation Entertainment: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/live-nation-entertainment/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
